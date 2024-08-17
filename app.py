@@ -3,8 +3,17 @@ from src.model import load, predict
 import pandas as pd
 from src.llm import make_prompt, get_summary
 
+__version__ = "0.0.1"
+
 app = Flask(__name__)
 model = load("./model/lgbm.pkl")
+
+@app.route("/", methods=["get"])
+def hello():
+    return {
+        "message": "Hello, Welcome to Psychobot AI API",
+        "version": __version__
+    }
 
 @app.route("/predict", methods=["post"])
 def predict_api():
