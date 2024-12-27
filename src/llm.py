@@ -1,7 +1,7 @@
 import google.generativeai as genAI
 import pandas as pd
 
-model = genAI.GenerativeModel("gemini-pro")
+model = genAI.GenerativeModel("gemini-1.5-pro")
 
 
 def make_prompt(p: pd.DataFrame) -> str:
